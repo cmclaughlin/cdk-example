@@ -27,8 +27,7 @@ class MyStack(TerraformStack):
                        content_type='text/html',
                        depends_on=[bucket])
 
-# FIXME
-#        TerraformOutput(self, 'bucket-output', value=bucket)
+        TerraformOutput(self, 'endpoint', value=bucket.website_endpoint)
 
 
 app = App()
